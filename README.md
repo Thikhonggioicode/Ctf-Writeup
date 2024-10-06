@@ -6,21 +6,27 @@
 
 ![alt text](image-1.png)
 
-So this is a Challenge in Ascis 2024 CTF
+So this is a Challenge in **Ascis 2024 CTF**. I got the correct flag at early but somehow it said ***incorrect*** so it's take alot of time to check it again and again. GG 
+
+I download the file and drop it in my VMware.
 
 ![alt text](image-2.png)
+
+Alright ! I just type random and check the result. Of course . . . this is not Pwn challenge.
 
 ![alt text](image-12.png)
 
 I use ```file <file name>``` to check this ```filedanger```
-and I know that it's a ELF 64-bit  
+and know that it's a ELF 64-bit  
 
 ![alt text](image-3.png)
 
-After using ```cat <filename>```, I can say it an UPX packer by look in the last line ```PX!UPX! fwww�7{��?t▒�?n� ```
+After using ```cat <filename>```. 100% it's an UPX packer by look in the last line ```PX!UPX! fwww�7{��?t▒�?n� ```
+
 ![alt text](image-4.png)
 
 All I need is unpack it and check it again with ```cat``` again . 
+
 ![alt text](image-5.png)
 
 ![alt text](image-7.png)
@@ -29,7 +35,8 @@ It's seem better now. I'll disassemble it by using IDA
 
 ![alt text](image-8.png)
 
-I can read the code after unpack. By read this code we only need to check the ```check_password``` function.
+ By read this code we only need to check the ```check_password``` function.
+
 ![alt text](image-9.png)
 The check_password function is performing a series of byte comparisons to validate the password. Here's a breakdown of what the function is doing:
 - Length Check: The password must be exactly 10 characters long (strlen(a1) != 10).
