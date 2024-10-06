@@ -38,6 +38,8 @@ It's seem better now. I'll disassemble it by using IDA
  By read this code we only need to check the ```check_password``` function.
 
 ![alt text](image-9.png)
+
+![alt text](image-11.png)
 The check_password function is performing a series of byte comparisons to validate the password. Here's a breakdown of what the function is doing:
 - Length Check: The password must be exactly 10 characters long (strlen(a1) != 10).
 
@@ -52,7 +54,6 @@ a1[8] == 114 and a1[9] == 100 (which corresponds to "r" and "d")
 ```
 And the password is ```repassword```
 
-![alt text](image-11.png)
 
 Just need to type the right password and here's the flag: 
 
